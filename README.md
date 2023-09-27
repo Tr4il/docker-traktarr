@@ -1,4 +1,4 @@
-# [eafxx/traktarr](https://hub.docker.com/r/eafxx/traktarr)
+# [Tr4il/Traktarr]
 
 - Run app commands configured via variables
 - PUID/PGID support
@@ -7,9 +7,12 @@
 
 ---
 
+- [\[Tr4il/Traktarr\]](#tr4iltraktarr)
 - [Requirements](#requirements)
 - [Installation](#installation)
-	- [Docker](#docker)
+  - [Docker](#docker)
+  - [Parameters](#parameters)
+  - [User / Group Identifiers](#user--group-identifiers)
 - [App Configuration](#app-configuration)
 
 ---
@@ -38,7 +41,7 @@
 **Docker Run**
 
 ```
-docker run -d --name='Traktarr' --net='bridge' -e TZ="Europe/London" -e 'PUID'='99' -e 'PGID'='100' -e 'DELAY'='' -e 'SORT'='rating' -e 'NOSEARCH'='yes' -e 'NOTIFICATIONS'='yes' -e 'BLACKLIST'='yes' -e 'RUNNOW'='no' -e 'SKIPUPDATE'='no' -e 'APP_BRANCH'='master' -v '<path to data>':'/config':'rw' 'eafxx/traktarr:latest'
+docker run -d --name='Traktarr' --net='bridge' -e TZ="Europe/London" -e 'PUID'='99' -e 'PGID'='100' -e 'DELAY'='' -e 'SORT'='rating' -e 'NOSEARCH'='yes' -e 'NOTIFICATIONS'='yes' -e 'BLACKLIST'='yes' -e 'RUNNOW'='no' -e 'SKIPUPDATE'='no' -e 'APP_BRANCH'='master' -v '<path to data>':'/config':'rw' 'ghcr.io/tr4il/traktarr:latest'
 
 ```
 OR
@@ -48,7 +51,7 @@ OR
 ```
     traktarr:
         container_name: traktarr
-        image: eafxx/traktarr
+        image: ghcr.io/tr4il/traktarr
         volumes:
             - <path to data>:/config
         environment:
