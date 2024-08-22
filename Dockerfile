@@ -162,6 +162,7 @@ RUN set -eux; \
 
 # add local files
 COPY root/ /
+RUN chmod +x /etc/cont-init.d/*
 
 # Install packages
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
